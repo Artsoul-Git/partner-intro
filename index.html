@@ -514,6 +514,93 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
   .hero{padding:40px 20px}
   section{padding:40px 20px;page-break-inside:avoid}
 }
+
+/* FRAMEWORK 3-STAGE */
+.framework-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:14px;
+  align-items:stretch;
+  margin-top:24px;
+}
+.framework-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px 22px;
+  display:flex;flex-direction:column;
+  position:relative;
+  box-shadow:var(--shadow);
+  transition:all .3s;
+}
+.framework-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--gold-soft);
+}
+.framework-step{
+  position:absolute;top:-12px;left:22px;
+  background:linear-gradient(135deg,var(--red-2),var(--red));
+  color:#fff;font-size:.72rem;font-weight:700;
+  padding:5px 14px;border-radius:999px;
+  letter-spacing:.1em;
+}
+.framework-ico{font-size:2.2rem;margin-top:8px;margin-bottom:6px}
+.framework-card h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.15rem;color:var(--sumi);
+  margin-bottom:8px;font-weight:700;
+}
+.framework-role{
+  font-size:.85rem;color:var(--red-2);
+  background:var(--accent-bg);
+  padding:6px 12px;border-radius:4px;
+  display:inline-block;margin-bottom:6px;
+  letter-spacing:.04em;
+}
+.framework-desc{
+  font-size:.92rem;color:var(--dim);
+  line-height:1.85;
+  margin-top:auto;
+}
+.framework-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.4rem;color:var(--gold);
+  font-weight:900;
+  padding:0 4px;
+}
+.framework-summary{
+  margin-top:40px;
+  background:linear-gradient(135deg,#fff 0%,var(--accent-bg) 100%);
+  border:1px solid var(--gold-pale);
+  border-left:5px solid var(--red-2);
+  border-radius:12px;
+  padding:30px 32px;
+  display:flex;gap:24px;align-items:flex-start;
+}
+.framework-summary-ico{font-size:2.4rem;flex-shrink:0;line-height:1}
+.framework-summary h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.15rem;color:var(--sumi);
+  margin-bottom:10px;line-height:1.6;
+}
+.framework-summary p{
+  font-size:.96rem;color:var(--dim);
+  line-height:2;
+}
+
+@media(max-width:980px){
+  .framework-grid{
+    grid-template-columns:1fr;
+  }
+  .framework-arrow{
+    transform:rotate(90deg);
+    padding:8px 0;
+  }
+  .framework-summary{
+    flex-direction:column;gap:12px;
+  }
+}
 </style>
 </head>
 <body>
@@ -523,22 +610,31 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
   <div class="hero-inner">
     <span class="hero-tag">アートソウル・パートナーご検討資料</span>
     <h1>
-      中小企業の<span class="accent">販路を攻略する</span>提案書セットを、<br>
-      <span class="em">あなたの武器</span>として届けませんか。
+      この資料セットを、<span class="accent">あなたの商材</span>にしますか。<br>
+      それとも、<span class="em">自分の隠し武器</span>にしますか。
     </h1>
     <p class="hero-sub">
-      この資料は、有限会社アートソウルとパートナーシップをご検討いただく方への <strong>3分でわかる事業紹介</strong> です。<br><br>
-      私たちは「中小企業の販路拡大」を、AI×構造設計でつくる提案書セットとして提供しています。
-      士業・金融機関・コンサルタント・支援機関の皆さまが、貴社のクライアントへ「本当に役立つ武器」を渡せる仕組みです。<br><br>
-      <strong>パートナーになると</strong>：自社で開発不要、貴社の顧客に対して提案書セットを提供でき、信頼関係をより強くできます。
+      想像してみてください。あなたのもとに来る中小企業の経営者が、「いい話だね」と笑顔で頷きながら、
+      数週間後には何も動かないまま戻ってくる──。<br>
+      その提案書はおそらく、ロジックが正しく、見栄えも整っていたはずです。
+      それでも現場のタスクには落ちず、結局PowerPointの中で眠ったまま。<br><br>
+
+      この資料は、顧客に提案資料・リサーチ資料を提供する立場の方
+      ──<strong>コンサルタント・営業会社・広告代理店・Web制作会社・士業・支援機関</strong>──に向けた事業紹介です。
+      私たちアートソウルが運用する「AI×構造設計の提案書セット」を、
+      <strong>①あなたが顧客に販売するリサーチ商材</strong> として扱うか、
+      <strong>②商談で水面下に持ち込む自分の武器（カンニングペーパー）</strong> として使うかは、お選びいただけます。<br><br>
+
+      <strong>ゴールは協業です。</strong> このシステムを「使う側」になるのか「届ける側」になるのか。
+      その選択軸を頭の片隅に置きながら、以下の実物デモと仕組みをご覧ください。
     </p>
     <div class="hero-cta">
       <a href="#demo" class="btn btn-primary">
-        <span>実物デモを見る（30秒で全体像）</span>
+        <span>実物デモを開く</span>
         <span class="arrow">→</span>
       </a>
       <a href="#partnership" class="btn btn-secondary">
-        <span>パートナーシップ案内</span>
+        <span>協業の3パターンを見る</span>
         <span class="arrow">→</span>
       </a>
     </div>
@@ -679,7 +775,7 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
       <div class="feature-card">
         <div class="feature-num">02</div>
         <h4>戦略を1行のコンセプトに圧縮</h4>
-        <p>「卸ルート＝広告投資」「個別営業→個対多数」など、複雑な戦略を1文に圧縮。経営層が秒で理解できる構造に。</p>
+        <p>「卸ルート＝広告投資」「個別営業→個対多数」など、複雑な戦略を1文に圧縮。経営層が短時間で本質を掴める構造に。</p>
         <span class="tag">コンセプチュアル</span>
       </div>
 
@@ -727,15 +823,15 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
     <span class="eyebrow">SECTION 05 / 各ドキュメントの見どころ</span>
     <h2>デモで見るべき<span class="accent">7つの場面</span>。</h2>
     <p class="lead">
-      時間がなければ、まずこの3つだけでも開いてみてください。
-      30秒ずつで構成の妙が伝わります。
+      時間が限られているときは、まずこの「⭐必見」3つから開いてみてください。
+      設計の意図と全体構造が掴めるよう配置しています。
     </p>
 
     <div class="highlight-grid">
       <div class="highlight-card featured">
         <span class="highlight-label">⭐ 必見</span>
         <h4>① ポータル（index.html）</h4>
-        <p class="desc">8HTMLの導線が一目で分かるカード形式のトップ画面。「これは何の提案書か」を3秒で理解させる設計思想。</p>
+        <p class="desc">8HTMLの導線が一目で分かるカード形式のトップ画面。「これは何の提案書か」をひと目で把握できるよう、色・番号・配置を統一しています。</p>
         <ul class="points">
           <li>提案書3本＋構造分解3本＋リサーチ1本の役割分担</li>
           <li>パスワードゲートの実装（sessionStorageで再アクセス時スキップ）</li>
@@ -910,6 +1006,121 @@ flowchart LR
       </div>
     </div>
 
+    <!-- 3段階フレームワーク：マンダラ→マトリクス→フロー -->
+    <h3 style="margin-top:60px">「計画」を「行動」に変える3段階フレームワーク</h3>
+    <p style="font-size:1rem;color:var(--dim);line-height:2;max-width:880px;margin-bottom:36px">
+      多くの計画が止まる場所は、いつも同じです。<strong>「網羅した」のに「優先順位がつかない」、決めたのに「最初の一歩が描けない」</strong>。
+      ラシンバンは、この詰まりを <strong>マンダラ → マトリクス → フロー</strong> の3段階で順番に解きほぐすことで、計画から成果までを途切れさせません。
+    </p>
+
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="framework-step">STEP 1</div>
+        <div class="framework-ico">🎯</div>
+        <h4>マンダラチャート</h4>
+        <div class="framework-role">役割：<strong>網羅して、抜けをなくす</strong></div>
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:240px;margin:14px auto;display:block">
+          <defs>
+            <linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7a1f1f"/><stop offset="100%" stop-color="#a52a2a"/></linearGradient>
+          </defs>
+          <g transform="translate(110,80)">
+            <!-- 8 theme cells around center -->
+            <rect x="-66" y="-66" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="-18" y="-66" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="30" y="-66" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="-66" y="-18" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="-18" y="-18" width="36" height="36" rx="4" fill="url(#mg1)" stroke="#7a1f1f" stroke-width="2"/>
+            <rect x="30" y="-18" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="-66" y="30" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="-18" y="30" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="30" y="30" width="36" height="36" rx="4" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1"/>
+            <text x="0" y="3" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">中央</text>
+            <text x="0" y="-48" text-anchor="middle" font-size="8" fill="#7a1f1f">テーマ</text>
+            <text x="-48" y="3" text-anchor="middle" font-size="8" fill="#7a1f1f">テーマ</text>
+            <text x="48" y="3" text-anchor="middle" font-size="8" fill="#7a1f1f">テーマ</text>
+            <text x="0" y="51" text-anchor="middle" font-size="8" fill="#7a1f1f">テーマ</text>
+          </g>
+        </svg>
+        <p class="framework-desc">中央テーマを8テーマに分解し、さらに各テーマを8アクションへ広げて<strong>計64アクション</strong>を一望。<br><br>「何が抜けているか」を可視化することで、<strong>「気づいたら忘れていた」を構造的にゼロ</strong>にします。発散の役割。</p>
+      </div>
+
+      <div class="framework-arrow" aria-hidden="true">→</div>
+
+      <div class="framework-card">
+        <div class="framework-step">STEP 2</div>
+        <div class="framework-ico">⚖️</div>
+        <h4>4象限マトリクス</h4>
+        <div class="framework-role">役割：<strong>絞って、順番をつける</strong></div>
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:240px;margin:14px auto;display:block">
+          <g transform="translate(20,20)">
+            <line x1="90" y1="0" x2="90" y2="120" stroke="#1a1a1a" stroke-width="1.2"/>
+            <line x1="0" y1="60" x2="180" y2="60" stroke="#1a1a1a" stroke-width="1.2"/>
+            <rect x="92" y="2" width="86" height="56" rx="3" fill="#fef2f2" stroke="#a52a2a" stroke-width="1.5"/>
+            <rect x="2" y="2" width="86" height="56" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+            <rect x="92" y="62" width="86" height="56" rx="3" fill="#fefce8" stroke="#b58a3b" stroke-width="1"/>
+            <rect x="2" y="62" width="86" height="56" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+            <text x="135" y="28" text-anchor="middle" font-size="9" fill="#7a1f1f" font-weight="bold">🔴 今すぐ</text>
+            <text x="135" y="42" text-anchor="middle" font-size="8" fill="#7a1f1f">着手</text>
+            <text x="45" y="28" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">🔵 計画的</text>
+            <text x="45" y="42" text-anchor="middle" font-size="8" fill="#1e40af">推進</text>
+            <text x="135" y="88" text-anchor="middle" font-size="9" fill="#b58a3b" font-weight="bold">🟡 委任</text>
+            <text x="135" y="102" text-anchor="middle" font-size="8" fill="#b58a3b">効率化</text>
+            <text x="45" y="88" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="bold">⚪ 保留</text>
+            <text x="45" y="102" text-anchor="middle" font-size="8" fill="#6b7280">見直し</text>
+            <text x="90" y="135" text-anchor="middle" font-size="8" fill="#1a1a1a">緊急度</text>
+            <text x="-5" y="60" text-anchor="middle" font-size="8" fill="#1a1a1a" transform="rotate(-90 -5 60)">重要度</text>
+          </g>
+        </svg>
+        <p class="framework-desc">広げた64項目を<strong>「重要度×緊急度」</strong>の2軸で4象限に配置。<br><br>「全部やる」が消え、<strong>「今すぐ／計画的／委任／保留」の順番</strong>が見えるので、会議の意思決定が止まりません。収束の役割。</p>
+      </div>
+
+      <div class="framework-arrow" aria-hidden="true">→</div>
+
+      <div class="framework-card">
+        <div class="framework-step">STEP 3</div>
+        <div class="framework-ico">🛠️</div>
+        <h4>フロー図（5〜6ステップ）</h4>
+        <div class="framework-role">役割：<strong>動き出せる手順にする</strong></div>
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:240px;margin:14px auto;display:block">
+          <g>
+            <rect x="14" y="20" width="50" height="28" rx="14" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1.5"/>
+            <rect x="78" y="20" width="50" height="28" rx="14" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1.5"/>
+            <rect x="142" y="20" width="50" height="28" rx="14" fill="#a52a2a" stroke="#7a1f1f" stroke-width="1.5"/>
+            <rect x="14" y="78" width="50" height="28" rx="14" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1.5"/>
+            <rect x="78" y="78" width="50" height="28" rx="14" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1.5"/>
+            <rect x="142" y="78" width="50" height="28" rx="14" fill="#fdf8ef" stroke="#b58a3b" stroke-width="1.5"/>
+            <line x1="64" y1="34" x2="78" y2="34" stroke="#7a1f1f" stroke-width="1.5" marker-end="url(#fa1)"/>
+            <line x1="128" y1="34" x2="142" y2="34" stroke="#7a1f1f" stroke-width="1.5" marker-end="url(#fa1)"/>
+            <line x1="167" y1="48" x2="167" y2="78" stroke="#7a1f1f" stroke-width="1.5" marker-end="url(#fa1)"/>
+            <line x1="142" y1="92" x2="128" y2="92" stroke="#7a1f1f" stroke-width="1.5" marker-end="url(#fa1)"/>
+            <line x1="78" y1="92" x2="64" y2="92" stroke="#7a1f1f" stroke-width="1.5" marker-end="url(#fa1)"/>
+            <text x="39" y="38" text-anchor="middle" font-size="8" fill="#1a1a1a">準備</text>
+            <text x="103" y="38" text-anchor="middle" font-size="8" fill="#1a1a1a">合意</text>
+            <text x="167" y="38" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">実施</text>
+            <text x="167" y="96" text-anchor="middle" font-size="8" fill="#1a1a1a">検証</text>
+            <text x="103" y="96" text-anchor="middle" font-size="8" fill="#1a1a1a">改善</text>
+            <text x="39" y="96" text-anchor="middle" font-size="8" fill="#1a1a1a">定着</text>
+            <defs><marker id="fa1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0 0, 6 3, 0 6" fill="#7a1f1f"/></marker></defs>
+            <text x="110" y="142" text-anchor="middle" font-size="9" fill="#7a1f1f" font-weight="bold">＋つまずきポイント</text>
+          </g>
+        </svg>
+        <p class="framework-desc">最優先項目を<strong>5〜6ステップの実行フロー</strong>に展開。各ステップに<strong>「想定されるつまずきポイント」</strong>を添えるので、現場が走り出す前に手戻りリスクを潰せます。実行の役割。</p>
+      </div>
+    </div>
+
+    <div class="framework-summary">
+      <div class="framework-summary-ico">🔗</div>
+      <div>
+        <h4>網羅 → 優先 → 実行 の3段階で「計画と行動の間の谷」を埋める</h4>
+        <p>
+          会議室で決めた戦略が、月曜の朝までに <strong>「誰が・何を・どう動くか」</strong> として残らないのは、
+          多くの場合「絞り込み」か「最初の一歩」のどちらかが欠けているからです。<br>
+          ラシンバンは、その<strong>2つの欠落を構造として埋め込み</strong>、計画を成果に繋げるための共通フレームワークとして機能します。
+          経営陣・コンサル・現場のいずれにも、同じ1画面で読み解いていただけます。
+        </p>
+      </div>
+    </div>
+
     <div class="solution-block" style="margin-top:50px">
       <p class="solution-quote" style="font-size:clamp(1.1rem,2.2vw,1.6rem)">
         提案書は「読んで終わり」ではなく、<br>
@@ -1042,8 +1253,8 @@ flowchart LR
 <div class="final-cta">
   <h2>まずは、デモを開いてみてください。</h2>
   <p>
-    30秒で全体像が伝わるはずです。<br>
-    そのうえで、パートナーシップに興味を持っていただけたら、お気軽にご連絡ください。
+    実物に触れていただくのが、いちばん早い理解です。<br>
+    そのうえで、協業に関心を持たれた方は、お気軽にご連絡ください。
   </p>
   <div>
     <a href="https://ccbox.artsoul.jp/echizen-jinshin/" target="_blank" rel="noopener" class="btn btn-primary">
