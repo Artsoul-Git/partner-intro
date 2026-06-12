@@ -515,6 +515,147 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
   section{padding:40px 20px;page-break-inside:avoid}
 }
 
+/* USP FLOW（7ステップ） */
+.usp-flow{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  gap:6px;align-items:stretch;margin-top:24px;
+}
+.usp-step{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:18px 12px 16px;text-align:center;position:relative;
+  box-shadow:var(--shadow);transition:all .25s;
+  display:flex;flex-direction:column;justify-content:flex-start;
+}
+.usp-step:hover{transform:translateY(-3px);border-color:var(--gold-soft);box-shadow:var(--shadow-lg)}
+.usp-step.is-goal{
+  background:linear-gradient(135deg,#fef2f2,#fef9c3);
+  border:2px solid var(--red);
+}
+.usp-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red-2),var(--red));
+  color:#fff;font-weight:800;font-size:.82rem;
+  margin:0 auto 8px;
+}
+.usp-step.is-goal .usp-num{
+  background:linear-gradient(135deg,var(--gold),var(--red));
+}
+.usp-ico{font-size:1.8rem;margin-bottom:6px;line-height:1}
+.usp-step h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:.88rem;color:var(--sumi);
+  font-weight:700;margin-bottom:6px;line-height:1.4;
+}
+.usp-step p{
+  font-size:.74rem;color:var(--dim);
+  line-height:1.6;
+}
+.usp-conn{
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;color:var(--gold);font-weight:900;
+}
+
+@media(max-width:1100px){
+  .usp-flow{
+    grid-template-columns:1fr 1fr 1fr;
+    gap:14px;
+  }
+  .usp-conn{display:none}
+  .usp-step h4{font-size:.95rem}
+  .usp-step p{font-size:.82rem}
+}
+@media(max-width:600px){
+  .usp-flow{grid-template-columns:1fr 1fr}
+}
+
+/* USE MODES */
+.use-modes{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;margin-top:36px;
+}
+.use-mode-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:12px;padding:22px 22px 20px;
+  position:relative;transition:all .25s;
+  box-shadow:var(--shadow);
+}
+.use-mode-card:hover{transform:translateY(-3px);border-color:var(--gold-soft);box-shadow:var(--shadow-lg)}
+.use-mode-tag{
+  position:absolute;top:-10px;left:16px;
+  background:var(--red-2);color:#fff;
+  font-size:.7rem;font-weight:700;
+  padding:4px 12px;border-radius:999px;
+  letter-spacing:.1em;
+}
+.use-mode-card h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.02rem;color:var(--sumi);
+  margin-top:6px;margin-bottom:8px;font-weight:700;
+}
+.use-mode-card p{
+  font-size:.88rem;color:var(--dim);line-height:1.85;
+}
+
+/* BUILD vs BUY */
+.build-buy{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:18px;align-items:stretch;margin-top:30px;
+}
+.build-buy-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:14px;padding:28px 26px;position:relative;
+  box-shadow:var(--shadow);transition:all .3s;
+}
+.build-buy-card.is-build{border-top:4px solid #94a3b8}
+.build-buy-card.is-buy{
+  border-top:4px solid var(--red);
+  background:linear-gradient(135deg,#fff 0%,#fdf8ef 100%);
+}
+.build-buy-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.build-buy-tag{
+  display:inline-block;font-size:.72rem;font-weight:700;
+  letter-spacing:.12em;padding:4px 12px;border-radius:4px;
+  margin-bottom:14px;
+}
+.build-buy-card.is-build .build-buy-tag{background:#f1f5f9;color:#475569}
+.build-buy-card.is-buy .build-buy-tag{background:var(--red-2);color:#fff}
+.build-buy-card h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.18rem;color:var(--sumi);
+  margin-bottom:14px;font-weight:700;
+}
+.build-buy-card ul{
+  list-style:none;padding:0;margin:0 0 14px;
+}
+.build-buy-card li{
+  font-size:.93rem;color:var(--dim);line-height:1.85;
+  padding-left:24px;position:relative;margin-bottom:10px;
+}
+.build-buy-card.is-build li::before{
+  content:"●";position:absolute;left:0;color:#94a3b8;
+}
+.build-buy-card.is-buy li::before{
+  content:"✓";position:absolute;left:0;color:var(--red-2);font-weight:900;
+}
+.build-buy-note{
+  font-size:.88rem;color:var(--red-2);
+  font-weight:600;font-style:italic;
+  border-top:1px dashed var(--border);
+  padding-top:12px;margin-top:8px;
+}
+.build-buy-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;color:var(--gold);font-weight:900;
+  letter-spacing:.05em;
+}
+@media(max-width:860px){
+  .build-buy{grid-template-columns:1fr}
+  .build-buy-arrow{padding:6px 0}
+}
+
 /* FRAMEWORK 3-STAGE */
 .framework-grid{
   display:grid;
@@ -608,25 +749,14 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <span class="hero-tag">アートソウル・パートナーご検討資料</span>
+    <span class="hero-tag">パートナー協業のご案内</span>
     <h1>
-      この資料セットを、<span class="accent">あなたの商材</span>にしますか。<br>
-      それとも、<span class="em">自分の隠し武器</span>にしますか。
+      テーマ1つから、<br>
+      <span class="accent">リサーチ・分析・実行設計図</span>まで。
     </h1>
-    <p class="hero-sub">
-      想像してみてください。あなたのもとに来る中小企業の経営者が、「いい話だね」と笑顔で頷きながら、
-      数週間後には何も動かないまま戻ってくる──。<br>
-      その提案書はおそらく、ロジックが正しく、見栄えも整っていたはずです。
-      それでも現場のタスクには落ちず、結局PowerPointの中で眠ったまま。<br><br>
-
-      この資料は、顧客に提案資料・リサーチ資料を提供する立場の方
-      ──<strong>コンサルタント・営業会社・広告代理店・Web制作会社・士業・支援機関</strong>──に向けた事業紹介です。
-      私たちアートソウルが運用する「AI×構造設計の提案書セット」を、
-      <strong>①あなたが顧客に販売するリサーチ商材</strong> として扱うか、
-      <strong>②商談で水面下に持ち込む自分の武器（カンニングペーパー）</strong> として使うかは、お選びいただけます。<br><br>
-
-      <strong>ゴールは協業です。</strong> このシステムを「使う側」になるのか「届ける側」になるのか。
-      その選択軸を頭の片隅に置きながら、以下の実物デモと仕組みをご覧ください。
+    <p class="hero-sub" style="font-size:clamp(1.1rem,1.9vw,1.35rem);max-width:780px;margin-bottom:32px">
+      <strong>顧客が「翌日のタスク」として動き出す提案資料</strong>を、AI×構造設計で1〜2営業日で組み立てる仕組みです。<br>
+      コンサル・営業会社・広告代理店・Web制作会社・士業など、<strong>顧客に提案資料や分析レポートを提供する立場の方</strong>に、協業パートナーとしてご活用いただいています。
     </p>
     <div class="hero-cta">
       <a href="#demo" class="btn btn-primary">
@@ -634,12 +764,86 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
         <span class="arrow">→</span>
       </a>
       <a href="#partnership" class="btn btn-secondary">
-        <span>協業の3パターンを見る</span>
+        <span>協業3パターンを見る</span>
         <span class="arrow">→</span>
       </a>
     </div>
   </div>
 </header>
+
+<!-- USP FLOW（提供価値の全体像） -->
+<section id="overview" style="background:var(--bg);padding-top:60px">
+  <div class="container">
+    <span class="eyebrow">OVERVIEW / 提供価値の全体像</span>
+    <h2>テーマ1つ <span class="accent">→ 顧客の翌日のタスク</span> まで、7ステップで一気通貫。</h2>
+    <p class="lead" style="margin-bottom:36px">
+      下記の流れを、貴社の案件1件ごとに1〜2営業日で組み立てます。
+      各ステップはHTMLドキュメントとして連携し、クリック1回で前後関係を辿れます。
+    </p>
+
+    <div class="usp-flow">
+      <div class="usp-step"><div class="usp-num">1</div><div class="usp-ico">🎯</div><h4>テーマ</h4><p>顧客の課題・目標を1行で受け取る</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step"><div class="usp-num">2</div><div class="usp-ico">🔍</div><h4>リサーチ</h4><p>公的統計・競合・市場動向を出典付きで収集</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step"><div class="usp-num">3</div><div class="usp-ico">🧭</div><h4>戦略・コンセプト</h4><p>核となる方針を1文に圧縮</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step"><div class="usp-num">4</div><div class="usp-ico">📐</div><h4>64アクション分解</h4><p>マンダラチャートで網羅・抜け漏れゼロ</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step"><div class="usp-num">5</div><div class="usp-ico">⚖️</div><h4>4象限で優先順位</h4><p>「今すぐ／計画的／委任／保留」を可視化</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step"><div class="usp-num">6</div><div class="usp-ico">🛠️</div><h4>実行フロー</h4><p>5〜6ステップ＋つまずきポイント</p></div>
+      <div class="usp-conn" aria-hidden="true">→</div>
+      <div class="usp-step is-goal"><div class="usp-num">7</div><div class="usp-ico">📅</div><h4>12ヶ月ガント<br>→ 翌日のタスク</h4><p>誰がいつ動くかが定まる</p></div>
+    </div>
+
+    <p style="text-align:center;font-size:1rem;color:var(--dim);margin-top:28px;line-height:1.9">
+      <strong>「整った提案書」</strong> ではなく、<strong style="color:var(--red-2)">「翌日から動ける実行設計図」</strong>。<br>
+      ──貴社の顧客に届けるのは、行動を引き起こす一冊です。
+    </p>
+  </div>
+</section>
+
+<!-- STORYTELLING（短縮版） -->
+<section style="background:linear-gradient(180deg,var(--bg) 0%,var(--accent-bg) 100%);padding-top:50px;padding-bottom:50px">
+  <div class="container" style="max-width:880px">
+    <p style="font-family:'Noto Serif JP',serif;font-size:clamp(1.2rem,2.3vw,1.55rem);font-weight:700;color:var(--sumi);line-height:1.9;margin-bottom:24px;letter-spacing:.02em">
+      想像してみてください──
+    </p>
+    <p style="font-size:1.05rem;line-height:2.1;color:var(--dim);margin-bottom:24px">
+      あなたのもとに来る中小企業の経営者が、「いい話だね」と笑顔で頷きながら、
+      <strong>数週間後には何も動かないまま戻ってくる</strong>。<br>
+      その提案書はおそらく、ロジックも正しく、見栄えも整っていたはず。
+      それでも現場のタスクには落ちず、結局PowerPointの中で眠ったまま──。
+    </p>
+    <p style="font-size:1.1rem;line-height:2;color:var(--sumi);font-weight:600;background:#fff;border-left:5px solid var(--red-2);padding:20px 24px;border-radius:0 8px 8px 0;box-shadow:var(--shadow)">
+      この「計画と行動の谷」を、構造として埋める仕組みが、本ページでご紹介する設計図です。
+    </p>
+
+    <div class="use-modes">
+      <div class="use-mode-card">
+        <div class="use-mode-tag">USE A</div>
+        <h4>📤 顧客への納品物として</h4>
+        <p>カスタマイズして、貴社の顧客に「実行設計図」をそのまま納品。</p>
+      </div>
+      <div class="use-mode-card">
+        <div class="use-mode-tag">USE B</div>
+        <h4>🗝️ 自社の隠し武器として</h4>
+        <p>商談時の社内用カンペ・分析資料の下敷きに。顧客には見せず手元で使う。</p>
+      </div>
+      <div class="use-mode-card">
+        <div class="use-mode-tag">USE C</div>
+        <h4>🤝 どちらも自由</h4>
+        <p>案件ごとに使い分けても構いません。納品物にも、戦略立案の補助にも。</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:1rem;color:var(--dim);margin-top:36px;line-height:2">
+      協業パートナーを募集しています。関わり方は <strong>①紹介 / ②共同提案 / ③運用販売代理店</strong> の3形態。
+      <a href="#partnership" style="color:var(--red-2);font-weight:700">▶ 詳細は本ページ下部で</a>
+    </p>
+  </div>
+</section>
 
 <!-- WHY -->
 <section style="background:var(--bg)">
@@ -649,7 +853,7 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
     <p class="lead">
       多くの提案書は「綺麗に整っているけれど、現場で使われない」。
       数値の根拠が薄く、実行手順が抽象的で、結局PowerPointの中で終わる。
-      私たちはその「あるある」に、別の答えを出しました。
+      その「あるある」に、別の答えを用意しました。
     </p>
 
     <div class="problem-grid">
@@ -675,29 +879,28 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
 <!-- SOLUTION -->
 <section style="background:var(--accent-bg)">
   <div class="container">
-    <span class="eyebrow">SECTION 02 / 私たちの答え</span>
+    <span class="eyebrow">SECTION 02 / 解</span>
     <h2>提案書は、<span class="accent">「実行設計図」</span>であるべき。</h2>
     <p class="lead">
-      私たちアートソウルが作っているのは、提案書という名の実行設計図です。
       数値には公的データの出典が紐づき、コンセプトは1文で言い切れ、
       施策は64項目に構造分解され、12ヶ月のロードマップで動き出せる。
+      ──これが、貴社の顧客に手渡される提案資料の最低ラインです。
     </p>
 
     <div class="solution-block">
       <p class="solution-quote">
-        代理店ルートを1ミリも壊さない。<br>
-        代理店の先にいる顔の見えない顧客を、<br>
-        メーカー側からも見えるようにする仕組みを作る。
+        コンセプト1文 <span style="color:var(--gold);font-weight:900">→</span> 64アクション <span style="color:var(--gold);font-weight:900">→</span> 12ヶ月ガント <span style="color:var(--gold);font-weight:900">→</span> 翌日のタスク。
       </p>
-      <p class="solution-by">— 越前刃心デモ「提案書① 卸ルート再定義」より</p>
+      <p class="solution-by">— 提案資料の「実行設計図」化、その全体像</p>
     </div>
 
     <h3 style="margin-top:50px">なぜ「実物」を見せられるのか</h3>
     <p style="font-size:1rem;color:var(--dim);line-height:2;max-width:840px">
-      クライアントには守秘義務をお約束しているため、実案件の中身を公開することはできません。<br>
+      実案件は守秘義務契約のため、中身を公開することはできません。<br>
       そこで、業務用刃物メーカー「越前刃心株式会社」という<strong>完全架空のクライアント</strong>を立て、<br>
       実案件と同等の品質で提案書セットを公開しています。<br>
-      会社名・人物・社内資料は架空ですが、<strong>業界統計・市場規模・参照ブランド事例はすべて実データ＋出典付き</strong>です。
+      会社名・人物・社内資料は架空ですが、<strong>業界統計・市場規模・参照ブランド事例はすべて実データ＋出典付き</strong>。
+      下のセクションで実物URLをご覧いただけます。
     </p>
   </div>
 </section>
@@ -914,7 +1117,7 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
     <span class="eyebrow">SECTION 06 / 仕組みの全体像</span>
     <h2>3層構造で<span class="accent">「武器化」</span>する。</h2>
     <p class="lead">
-      私たちのデモは、単なる資料ではなく「営業の武器」として運用されることを前提に、3つの層で構成しています。
+      このデモは単なる資料ではなく、「営業の武器」として運用される前提で、3つの層で構成しています。
     </p>
 
     <div class="mermaid-wrap">
@@ -937,7 +1140,7 @@ flowchart TD
     </div>
 
     <p style="font-size:.96rem;color:var(--dim);line-height:2;margin-top:30px;max-width:880px">
-      公開層は、お客様と直接共有していただいて構いません。社内層は提案の整合性を裏で支える資料、極秘層は私たちアートソウルだけが持つ営業ノウハウです。
+      公開層は、お客様と直接共有していただいて構いません。社内層は提案の整合性を裏で支える資料、極秘層はアートソウルだけが持つ営業ノウハウです。
       <strong>「3層が物理的に分離されている」ことが、流出事故を防ぎ、信頼を担保します。</strong>
     </p>
   </div>
@@ -949,7 +1152,7 @@ flowchart TD
     <span class="eyebrow">SECTION 07 / ラシンバン（構造分解）</span>
     <h2>計画を、<span class="accent">明日の行動</span>まで落とし込む。</h2>
     <p class="lead">
-      提案書を読んで「いい話だね」で終わらないために、私たちは <strong>「ラシンバン」</strong> という独自の構造分解ツールを開発しました。<br>
+      提案書を読んで「いい話だね」で終わらせないために、<strong>「ラシンバン」</strong> という独自の構造分解ツールを開発しました。<br>
       戦略・目標 → 64アクション → 優先順位 → 実行ステップ → 12ヶ月ガント → <strong>明日のタスク</strong> まで、クリック1回で繋がります。
     </p>
 
@@ -1196,13 +1399,60 @@ flowchart LR
   </div>
 </section>
 
-<!-- PARTNERSHIP -->
-<section id="partnership">
-  <div class="container">
-    <span class="eyebrow">SECTION 09 / パートナーシップ</span>
-    <h2>3つの<span class="accent">関わり方</span>。</h2>
+<!-- BUILD vs BUY -->
+<section style="background:var(--bg)">
+  <div class="container" style="max-width:980px">
+    <span class="eyebrow">SECTION 09 / よくいただくご質問</span>
+    <h2>「これ、<span class="accent">自社でも作れるのでは？</span>」</h2>
     <p class="lead">
-      アートソウルとのパートナーシップは、貴社の立場・スコープに応じて3つの形があります。
+      正直にお答えします。<strong>はい、作れます。</strong>
+      AIを使い、構造設計の知見を蓄え、テンプレートを整備すれば、貴社単独でも同じものを組み立てることは可能です。<br>
+      問題は、<strong>そこに至るまでの時間と労力</strong>です。
+    </p>
+
+    <div class="build-buy">
+      <div class="build-buy-card is-build">
+        <div class="build-buy-tag">BUILD（自社で作る）</div>
+        <h4>🏗 自社開発</h4>
+        <ul>
+          <li>AI活用＋構造設計の知見蓄積：<strong>6ヶ月〜</strong></li>
+          <li>テンプレート・出典管理体制の整備：<strong>3ヶ月〜</strong></li>
+          <li>業種別カスタマイズノウハウ：<strong>案件ごとに試行錯誤</strong></li>
+          <li>1案件あたりの初期完成度に到達するまで <strong>数十時間</strong></li>
+        </ul>
+        <p class="build-buy-note">「いつかやろう」が続くと、案件の機会損失は累積します。</p>
+      </div>
+
+      <div class="build-buy-arrow">vs</div>
+
+      <div class="build-buy-card is-buy">
+        <div class="build-buy-tag">BUY（協業で使う）</div>
+        <h4>🤝 協業パートナーになる</h4>
+        <ul>
+          <li>初期セットアップ：<strong>即日〜数日</strong></li>
+          <li>2年以上の試行錯誤で得た再現性ある仕組み</li>
+          <li>業種別の応用パターン・出典源リスト・運用ノウハウ込み</li>
+          <li>1案件 <strong>1〜2営業日</strong> で「実行設計図」を組み立て</li>
+        </ul>
+        <p class="build-buy-note">時間を買う、完成度を買う、コスパで選ぶ。</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:1rem;color:var(--dim);margin-top:32px;line-height:2;max-width:780px;margin-left:auto;margin-right:auto">
+      <strong>判断軸はシンプルです。</strong><br>
+      自社で時間をかけて作るか、すでに走っているシステムに乗るか。
+      どちらが貴社の事業ペースに合うか、で決めていただければ十分です。
+    </p>
+  </div>
+</section>
+
+<!-- PARTNERSHIP -->
+<section id="partnership" style="background:var(--accent-bg)">
+  <div class="container">
+    <span class="eyebrow">SECTION 10 / パートナーシップ</span>
+    <h2>協業の<span class="accent">3パターン</span>。</h2>
+    <p class="lead">
+      関わり方は、貴社の立場・リソース・狙いに応じて選択できます。
     </p>
 
     <div class="partner-grid">
@@ -1210,21 +1460,27 @@ flowchart LR
         <div class="icon">🤝</div>
         <div class="role">PARTNERSHIP A</div>
         <h4>紹介パートナー</h4>
-        <p>貴社のクライアントネットワークから、アートソウルへ案件を紹介いただきます。紹介手数料は受注時にお支払い。クライアントとの直接契約はアートソウルが受け、貴社の手間は最小限です。</p>
+        <p>貴社のクライアントネットワークからご紹介いただき、<strong>契約が成立した時のみ</strong>インセンティブをお支払いする形式。<br>
+        ・契約はクライアント × アートソウル<br>
+        ・成果報酬型（手間最小）</p>
       </div>
 
       <div class="partner-card">
         <div class="icon">🛠️</div>
         <div class="role">PARTNERSHIP B</div>
         <h4>共同提案パートナー</h4>
-        <p>貴社の専門領域（業種知見・コンサルティング・税務会計など）と、私たちのAI×構造設計を組み合わせて共同提案する形式。共同名義でクライアントに納品し、収益分配します。</p>
+        <p>貴社が専門領域でクライアントにご提案、<strong>契約は貴社</strong>、共同名義でアートソウルが納品。<br>
+        ・運用サポートは貴社側<br>
+        ・アドバイザリー的な関わり方</p>
       </div>
 
       <div class="partner-card">
         <div class="icon">🎓</div>
         <div class="role">PARTNERSHIP C</div>
-        <h4>運用・販売代理店</h4>
-        <p>貴社のクライアント向けに、私たちの提案書セットをカスタマイズして納品する事業を運営いただく形式。テンプレ・ノウハウ・支援体制をご提供します。</p>
+        <h4>運用販売代理店</h4>
+        <p>システムそのものを<strong>買い取り</strong>、クライアントへの販売・運用継続サポートを貴社で行っていただく形式。<br>
+        ・基本は売り切りベース<br>
+        ・定期的なメンテ・アップデートは別途協議</p>
       </div>
     </div>
 
