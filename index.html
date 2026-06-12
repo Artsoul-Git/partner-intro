@@ -598,6 +598,71 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
   font-size:.88rem;color:var(--dim);line-height:1.85;
 }
 
+/* DEMO IMAGINE NOTE（デモを自分事として捉えてもらうボックス） */
+.demo-imagine{
+  margin-top:30px;
+  background:linear-gradient(135deg,#fff 0%,#fdf8ef 100%);
+  border:1px solid var(--gold-pale);
+  border-left:5px solid var(--gold);
+  border-radius:12px;
+  padding:24px 28px;display:flex;gap:18px;align-items:flex-start;
+  box-shadow:var(--shadow);
+}
+.demo-imagine-ico{font-size:2rem;line-height:1;flex-shrink:0;margin-top:2px}
+.demo-imagine p{
+  font-size:1rem;color:var(--dim);line-height:2;margin:0;
+}
+@media(max-width:680px){
+  .demo-imagine{flex-direction:column;gap:8px}
+}
+
+/* OVERDOSE NOTE（情報過多対策＋伴走支援メリット） */
+.overdose-note{
+  margin-top:48px;background:#fff;
+  border:1px solid var(--border);border-left:5px solid var(--gold);
+  border-radius:14px;padding:32px clamp(20px,3vw,40px);
+  box-shadow:var(--shadow);
+}
+.overdose-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.overdose-ico{font-size:1.8rem;line-height:1}
+.overdose-note h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(1.05rem,2vw,1.3rem);
+  color:var(--sumi);font-weight:700;line-height:1.5;margin:0;
+}
+.overdose-note > p{
+  font-size:1rem;color:var(--dim);line-height:2;margin-bottom:24px;
+}
+.overdose-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:18px;margin-top:8px;
+}
+.overdose-card{
+  background:var(--accent-bg);border-radius:10px;padding:20px 22px;
+  border:1px solid var(--border);position:relative;
+  transition:all .25s;
+}
+.overdose-card.is-with{
+  background:linear-gradient(135deg,#fdf8ef 0%,#fff3d6 100%);
+  border-color:var(--gold-pale);
+}
+.overdose-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.overdose-tag{
+  display:inline-block;font-size:.72rem;font-weight:700;
+  padding:4px 12px;border-radius:999px;
+  letter-spacing:.08em;margin-bottom:10px;
+}
+.overdose-card.is-diy .overdose-tag{background:#e2e8f0;color:#475569}
+.overdose-card.is-with .overdose-tag{background:var(--red-2);color:#fff}
+.overdose-card h4{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.02rem;color:var(--sumi);margin-bottom:8px;font-weight:700;
+}
+.overdose-card p{font-size:.9rem;color:var(--dim);line-height:1.85}
+@media(max-width:680px){
+  .overdose-grid{grid-template-columns:1fr}
+}
+
 /* BUILD vs BUY */
 .build-buy{
   display:grid;
@@ -873,6 +938,32 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
         <p>テンプレートに当てはめただけの提案書は、現場の温度を捉えられず、「うちはちょっと違う」で終わります。</p>
       </div>
     </div>
+
+    <!-- 情報過多対策＋伴走支援メリット -->
+    <div class="overdose-note">
+      <div class="overdose-head">
+        <span class="overdose-ico">⚠️</span>
+        <h3>では「情報を詰め込めばいい」のか？──いいえ。</h3>
+      </div>
+      <p>
+        逆方向の失敗もよく耳にします。<strong>「情報が多すぎて、結局どこから手を付ければいいか分からない」</strong>。
+        ですから本仕組みは、提供された側がしっかり腰を据えて取り組めば <strong>自社単独でも実行できる粒度</strong> まで落とし込んでいます。
+        ただし、<strong>要所要所には「専門家の助けを借りた方が成功率が大きく変わる」分岐点</strong> もあらかじめ仕込んであります。
+      </p>
+      <div class="overdose-grid">
+        <div class="overdose-card is-diy">
+          <div class="overdose-tag">DIY</div>
+          <h4>顧客が自社で頑張る場合</h4>
+          <p>資料に沿って腰を据えて取り組めば、要所まで自走できる粒度に落とし込み済み。</p>
+        </div>
+        <div class="overdose-card is-with">
+          <div class="overdose-tag">+ 伴走支援</div>
+          <h4>貴社（専門家）が伴走する場合</h4>
+          <p><strong>圧倒的な時短と高い再現性</strong>で、結果的により早く・より良い成果に繋がります。
+          「自社でもできるが、伴走したほうが確実に早い」──ここが営業時の核です。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -897,7 +988,7 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
     <h3 style="margin-top:50px">なぜ「実物」を見せられるのか</h3>
     <p style="font-size:1rem;color:var(--dim);line-height:2;max-width:840px">
       実案件は守秘義務契約のため、中身を公開することはできません。<br>
-      そこで、業務用刃物メーカー「越前刃心株式会社」という<strong>完全架空のクライアント</strong>を立て、<br>
+      そこで、業務用刃物メーカー「越前刃心株式会社（えちぜん はしん）」という<strong>完全架空のクライアント</strong>を立て、<br>
       実案件と同等の品質で提案書セットを公開しています。<br>
       会社名・人物・社内資料は架空ですが、<strong>業界統計・市場規模・参照ブランド事例はすべて実データ＋出典付き</strong>。
       下のセクションで実物URLをご覧いただけます。
@@ -909,11 +1000,20 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
 <section id="demo">
   <div class="container">
     <span class="eyebrow">SECTION 03 / 実物デモ</span>
-    <h2>越前刃心デモを、<span class="accent">実際にご覧ください</span>。</h2>
+    <h2>越前刃心（えちぜん はしん）デモを、<span class="accent">実際にご覧ください</span>。</h2>
     <p class="lead">
-      業務用刃物メーカー（架空・福井県）の販路拡大を、提案書3本＋構造分解3本＋新販路リサーチで構成。
-      アクセス可能なURLでご覧いただけます。
+      業務用刃物メーカー（架空・福井県）の販路拡大をテーマに、提案書3本＋構造分解3本＋新販路リサーチで構成した例です。
     </p>
+
+    <div class="demo-imagine">
+      <span class="demo-imagine-ico">💡</span>
+      <p>
+        <strong>このデモは、ごく簡単な指示のみで作成した「最低限のサンプル」です。</strong><br>
+        実際の運用では、貴社が積み上げてきたメソッド・顧客の業界情報・ヒアリングで得た一次情報を加えることで、
+        <strong>貴社にしか作れない、リアルで実践的な提案資料</strong>に仕上がります。
+        サンプルの構造に沿ってアレンジするだけで、競合の誰よりも踏み込んだ提案が組み立てられます。
+      </p>
+    </div>
 
     <div class="showcase">
       <div class="showcase-inner">
@@ -963,8 +1063,7 @@ footer .copy{margin-top:24px;font-size:.78rem;opacity:.6}
     <span class="eyebrow">SECTION 04 / 7つの特長</span>
     <h2>「こんな営業資料、うちも欲しい」<br>と思っていただける理由。</h2>
     <p class="lead">
-      他の提案書サービスと、どこが違うのか。
-      実際に開いていただくと一目瞭然ですが、文章でも要点をまとめました。
+      他の提案書サービスと、どこが違うのか。要点を整理してお伝えします。
     </p>
 
     <div class="features">
